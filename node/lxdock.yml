@@ -1,0 +1,18 @@
+name: nodejs
+image: ubuntu/xenial
+hostnames:
+  - nodejs
+
+privileged: yes
+
+shares:
+  - source: /home/josep/workspace/test_lxc
+    dest: /home/ubuntu/workspace
+
+shell:
+  user: ubuntu
+  home: /home/ubuntu
+
+provisioning:
+  - type: ansible
+    playbook: install_node.yml

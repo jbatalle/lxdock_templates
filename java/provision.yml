@@ -1,0 +1,9 @@
+- name: Tests provisioning
+  hosts: all
+  become: yes
+  vars_files:
+    - vars.yml
+  tasks:
+    - name: Install required system packages.
+      apt: pkg={{ item }} state=installed update-cache=yes
+      with_items: "{{ system_packages }}"

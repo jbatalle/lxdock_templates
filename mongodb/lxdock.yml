@@ -1,0 +1,14 @@
+name: mongodb
+image: ubuntu/xenial
+hostnames:
+  - mongo
+
+privileged: yes
+
+shell:
+  user: ubuntu
+  home: /home/ubuntu
+
+provisioning:
+  - type: ansible
+    playbook: install_node.yml

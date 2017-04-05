@@ -1,0 +1,7 @@
+---
+system_packages:
+  - build-essential
+  - git
+  - nano
+  - npm
+  - nodejs-legacy

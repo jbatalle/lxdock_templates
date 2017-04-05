@@ -1,0 +1,21 @@
+name: java
+image: ubuntu/xenial
+hostnames:
+  - test
+
+privileged: yes
+
+shares:
+  - source: /home/josep/workspace/test_lxc
+    dest: /home/ubuntu/workspace
+
+shell:
+  user: ubuntu
+  home: /home/ubuntu
+
+provisioning:
+  - type: ansible
+    playbook: provision.yml
+
+environment:
+  TEST: 'var_env'
